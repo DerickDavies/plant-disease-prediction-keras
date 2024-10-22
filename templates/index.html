@@ -1,0 +1,126 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detective 🌿</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <div class="theme-switch">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf animate__animated animate__bounce"></i>
+                <h1>Plant Disease Detective</h1>
+            </div>
+            <p class="subtitle">Your AI-Powered Plant Health Assistant</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="upload-section card animate__animated animate__fadeIn">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <p>Drag and drop your plant image here</p>
+                    <span class="or-divider">or</span>
+                    <button class="browse-btn">Browse Files</button>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                <div class="preview-container" id="previewContainer">
+                    <img id="previewImage" alt="Preview">
+                    <div class="preview-overlay">
+                        <button class="change-image-btn" id="changeImageBtn">
+                            <i class="fas fa-redo"></i> Change Image
+                        </button>
+                    </div>
+                </div>
+                <button id="predictBtn" class="predict-btn" disabled>
+                    <i class="fas fa-search"></i> Analyze Plant
+                </button>
+                <div class="loading-spinner" id="loadingSpinner">
+                    <div class="spinner"></div>
+                    <p>Analyzing your plant...</p>
+                </div>
+            </div>
+
+            <div class="results-section card animate__animated animate__fadeIn" id="resultsCard">
+                <div class="results-header">
+                    <i class="fas fa-microscope"></i>
+                    <h2>Analysis Results</h2>
+                </div>
+
+                <div class="diagnosis-container">
+                    <div class="primary-result">
+                        <h3>Primary Diagnosis</h3>
+                        <div class="diagnosis-box">
+                            <i class="fas fa-certificate"></i>
+                            <p id="primaryPrediction"></p>
+                            <div class="confidence-bar">
+                                <div class="confidence-progress" id="primaryConfidence"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alternative-results" id="alternativeResults">
+                        <h3>Alternative Possibilities</h3>
+                        <!-- Alternative predictions will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="care-recommendations" id="careRecommendations">
+                    <h3>Care Recommendations</h3>
+                    <div class="recommendations-container">
+                        <!-- Care recommendations will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn save-btn" id="saveResultsBtn">
+                        <i class="fas fa-save"></i> Save Results
+                    </button>
+                    <button class="action-btn share-btn" id="shareResultsBtn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section card animate__animated animate__fadeIn">
+            <h2><i class="fas fa-history"></i> Recent Analyses</h2>
+            <div class="history-container" id="historyContainer">
+                <!-- History items will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="shareModal">
+        <div class="modal-content">
+            <h3>Share Results</h3>
+            <div class="share-options">
+                <button class="share-option" data-platform="email">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+                <button class="share-option" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+            </div>
+            <button class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
