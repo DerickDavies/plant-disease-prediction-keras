@@ -117,5 +117,5 @@ def predict():
             'error': str(e)
         })
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':      // Enable these lines to run it locally.
+#     app.run(debug=True)
